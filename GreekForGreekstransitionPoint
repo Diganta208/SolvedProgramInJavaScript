@@ -1,0 +1,16 @@
+  transitionPoint(arr, n) {
+      let index=-1;
+      let first;
+     
+    //code here
+    for (let i=0; i<arr.length; i++)
+    {
+            if(arr[i]===1)
+            {
+                index=i
+                break;
+            }
+    }
+    
+    return index
+  }
