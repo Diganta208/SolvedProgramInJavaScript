@@ -1,0 +1,28 @@
+ balancedNumber(str){
+        //code here
+        
+        let m=Math.ceil(str.length/2)
+        let lhs=0
+        let Rhs=0
+      
+        
+        for(let i=0; i<m-1; i++)
+        {
+            lhs+=parseInt(str[i])
+        }
+        
+         for(let i=m; i<str.length; i++)
+        {
+            Rhs+=parseInt(str[i])
+        }
+        
+        
+        if(lhs==Rhs)
+        {
+            return true
+        }
+        else 
+        {
+           return false
+        }
+    }
