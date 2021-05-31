@@ -1,0 +1,13 @@
+   let evenSum=0
+        let oddSum=0
+        let m
+        // code here
+        for(let i=0; i<N; i++)
+        {
+            m=i+1
+            if(m%2==0) evenSum+=K
+            else oddSum+=K
+        }
+        
+        if(evenSum>oddSum)  return evenSum
+        else  return oddSum
