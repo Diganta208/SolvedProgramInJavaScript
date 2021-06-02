@@ -1,0 +1,7 @@
+ MissingNumber(array,n){
+        //code here
+        for(let i=1; i<=n; i++)
+        { 
+           if(!array.includes(i)) return i
+        }
+    }
