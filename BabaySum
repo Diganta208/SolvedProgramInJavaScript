@@ -1,0 +1,64 @@
+function Bigsum(n1, n2){
+    let num1
+    let num2
+    let result=''
+    let extra=null
+    let sum
+    let addExtra=0
+
+    if(n1>n2)
+    {
+        num1=n1.toString()
+        num2= n2.toString()
+    }
+    else
+    {
+        num2=n1.toString()
+        num1= n2.toString()
+    }
+
+    if(num1.length!=num2.length)
+    {
+        let dif=num1.length-num2.length
+
+        for(let j=0; j<dif; j++)
+        {
+            num2='0'+num2
+        }
+    }
+
+
+    
+
+    for(let i=Math.max(num1.length, num2.length)-1; i>=0; i--)
+    {
+       
+      if(num1.length>= num2.length)
+      {
+            if(extra)  addExtra=(parseInt(num1[i])+extra) 
+            if(addExtra>0)
+            {
+                    sum=(addExtra+parseInt(num2[i]).toString())
+                    addExtra=0
+            }
+            else sum=(parseInt(num1[i])+parseInt(num2[i])).toString()
+            if(sum.length==2)
+             {
+                if(i==0) result=sum+result
+                else
+                {
+                    extra=parseInt(sum[0])
+                    result=sum[1]+result
+                }
+             }
+             else{
+                result=sum+result
+                extra=0
+             }
+       }
+    }
+
+    console.log(result)
+}
+
+Bigsum(987,70)
