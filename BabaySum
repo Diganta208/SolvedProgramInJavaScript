@@ -1,44 +1,27 @@
-function Bigsum(n1, n2){
+function BabySum(n1, n2){
     let num1
     let num2
     let result=''
-    let extra=null
+    let extra=0
     let sum
     let addExtra=0
-
-    if(n1>n2)
-    {
-        num1=n1.toString()
-        num2= n2.toString()
-    }
+    if(n1.length>=n2.length)
+    { num1=n1
+      num2= n2}
     else
-    {
-        num2=n1.toString()
-        num1= n2.toString()
-    }
-
+    {   num2=n1
+        num1= n2 }
     if(num1.length!=num2.length)
-    {
-        let dif=num1.length-num2.length
-
-        for(let j=0; j<dif; j++)
-        {
-            num2='0'+num2
-        }
+    {  let dif=num1.length-num2.length
+        for(let j=0; j<dif; j++)  {num2='0'+num2 }
     }
-
-
-    
-
-    for(let i=Math.max(num1.length, num2.length)-1; i>=0; i--)
+    for(let i=num1.length-1; i>=0; i--)
     {
-       
-      if(num1.length>= num2.length)
-      {
             if(extra)  addExtra=(parseInt(num1[i])+extra) 
             if(addExtra>0)
             {
-                    sum=(addExtra+parseInt(num2[i]).toString())
+                console.log(addExtra)
+                    sum=(addExtra+parseInt(num2[i])).toString()
                     addExtra=0
             }
             else sum=(parseInt(num1[i])+parseInt(num2[i])).toString()
@@ -46,19 +29,16 @@ function Bigsum(n1, n2){
              {
                 if(i==0) result=sum+result
                 else
-                {
-                    extra=parseInt(sum[0])
-                    result=sum[1]+result
-                }
+                { extra=parseInt(sum[0])
+                  result=sum[1]+result  }
              }
              else{
                 result=sum+result
                 extra=0
              }
-       }
     }
 
     console.log(result)
 }
 
-Bigsum(987,70)
+BabySum("584565452564873246879453547564788678786564","70")
