@@ -20,7 +20,6 @@ function BabySum(n1, n2){
             if(extra)  addExtra=(parseInt(num1[i])+extra) 
             if(addExtra>0)
             {
-                console.log(addExtra)
                     sum=(addExtra+parseInt(num2[i])).toString()
                     addExtra=0
             }
