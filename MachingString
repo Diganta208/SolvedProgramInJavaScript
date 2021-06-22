@@ -1,0 +1,23 @@
+
+function machingString(bigString, smallString){
+
+    let count=0
+    let m=0
+
+    for(let i=0; i<bigString.length-(smallString.length-1); i++)
+    {
+        m=i
+        for(let j=0; j<smallString.length; j++)
+        {
+           if(smallString[j]==bigString[m] && j==smallString.length-1) count++
+           else if(smallString[j]==bigString[m]) m++;
+           else break
+        }
+    }
+
+    return count
+
+}
+
+
+console.log(machingString("wownwowopookrewkwowow", "wow"))
