@@ -1,0 +1,15 @@
+function beautifulDays(i, j, k) {
+    // Write your code here
+    let num2
+    let diff
+    let isZero
+    let count=0
+    for(let init=i; init<=j; init++)
+    {
+        num2= init.toString().split('').reverse().join('')
+        diff= Math.abs(init-num2)
+        isZero=diff%k
+        if(isZero==0) count++  
+    }
+    return count
+}
