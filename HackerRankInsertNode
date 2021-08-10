@@ -1,0 +1,20 @@
+function insertNodeAtPosition(llist, data, position) {
+    // Write your code here
+    let aNode=new SinglyLinkedListNode(data)
+    let currentNode=llist
+    let prsentNode=llist
+    let count=0
+    while(count<position && currentNode.next!=null)
+    {
+        
+        count++
+        prsentNode=currentNode
+        currentNode=currentNode.next
+    }
+    prsentNode.next=aNode
+    aNode.next=currentNode
+    
+    return llist
+    
+
+}
