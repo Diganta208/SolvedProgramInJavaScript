@@ -1,0 +1,47 @@
+class stack{
+    
+    constructor(){
+     this.arr=[]
+     this.size=0
+    }
+
+    push(value)
+    {
+        this.arr[this.size]=value
+        this.size++
+    }
+
+    pop()
+    {
+        this.arr.splice(this.size-1,1)
+        this.size--
+    }
+
+    print()
+    { 
+        if(this.size>0)
+        {
+            for(let i=0; i<this.arr.length; i++)
+            {
+                console.log(this.arr[i])
+            }
+        }
+
+        else
+        {
+            console.log("There is no element in this stack")
+        }
+      
+    }
+}
+
+
+var aStack=new stack()
+aStack.push(5)
+aStack.push(10)
+aStack.push(20)
+aStack.push(30)
+aStack.pop()
+aStack.pop()
+aStack.pop()
+aStack.print()
