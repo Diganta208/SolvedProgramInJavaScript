@@ -1,0 +1,41 @@
+class Queue{
+    constructor()
+    {
+        this.arr=[]
+        this.top=0
+    }
+
+    enqueue(x){}
+    dequeue(){}
+    print(){}
+}
+
+Queue.prototype.enqueue= function (x){
+   this.arr[this.top]=x
+   this.top++
+}
+
+Queue.prototype.dequeue=function()
+{
+    let value=this.arr[0]
+    this.arr.splice(0,1)
+    this.top--
+    return value
+}
+
+Queue.prototype.print= function(){
+    for(let i=0; i<this.arr.length; i++)
+    {
+        console.log(this.arr[i])
+    }
+}
+
+let aQueue= new Queue()
+aQueue.enqueue(10)
+aQueue.enqueue(20)
+aQueue.enqueue(30)
+aQueue.print()
+console.log('____________________________________________')
+console.log(aQueue.dequeue())
+console.log('____________________________________________')
+aQueue.print()
