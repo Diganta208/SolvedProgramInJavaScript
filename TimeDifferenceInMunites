@@ -1,0 +1,17 @@
+timeDifff(index)
+  {
+    if(this.machineList[index].Maintenance!=0)
+    {
+      let time=this.machineList[index].stopingTime //'16:20'
+      let time1=this.machineList[index].startTime //'17:20'
+      let munites= parseInt(time.slice(0,2))*60+ parseInt(time.slice(3,5))
+      let munites1= parseInt(time1.slice(0,2))*60+ parseInt(time1.slice(3,5))
+      console.log(munites1-munites)
+      if(this.machineList[index].Maintenance==(munites1-munites))  this.save(index)
+      else {
+        this.api.showWarningToast("Maintenance Time Difference Not Matching")
+        return
+      }
+    }
+    else  this.save(index)
+  }
