@@ -1,0 +1,28 @@
+let arr=[10,20,30,40,44]
+
+
+arr= arr.filter((res)=>res%5==0)
+     .map((res)=>res+5)
+
+let pro1= function(type){
+    return new Promise((resolve, reject)=>{
+        if(type)  resolve(5)
+        else reject("type is false")
+       
+    })
+}
+
+let type=false
+
+pro1(type).then((result)=>{
+    return new Promise((resolve, reject)=>{
+        if(result>5) resolve(result)
+        else reject("Number is not greater than 5")
+    })  
+}).then((res)=>{
+    console.log(`${res} is greater than 5`)
+}).catch((err)=>{
+     console.log(err)
+})
+
+console.log("It")
