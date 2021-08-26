@@ -1,0 +1,19 @@
+function countingValleys(steps, path) {
+    // Write your code here
+    
+    let result=0
+    let hike=0
+    
+    for(let i=0; i<steps; i++)
+    {
+        if(path[i]=='U') hike++
+        else hike--
+        
+        if(hike==0 && path[i]=='U') result++
+    }
+
+    return result
+
+}
+
+console.log(countingValleys(8,'UDDDUDUU'))
