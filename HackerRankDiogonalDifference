@@ -1,0 +1,14 @@
+let arr= [[10,20,50],[90,100,40],[50,20,10]]
+let left_diogonal=0
+let right_diogonal=0
+
+for(let i=0;i<arr.length; i++)
+{
+    for(let j=0 ; j<arr[i].length; j++)
+    {
+       if(i==j) left_diogonal+=arr[i][j]
+       if((arr.length-j-1)==i) right_diogonal+=arr[i][j]
+    }
+}
+
+console.log(Math.abs(left_diogonal-right_diogonal))
