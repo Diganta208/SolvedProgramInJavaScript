@@ -1,0 +1,18 @@
+
+let Emitter= require('events')
+
+class Massage extends Emitter  {
+
+    newMassge(num){
+        num=num+1000
+        this.emit("massageEmitter",num)
+    }
+
+}
+
+aMassge= new Massage()
+
+aMassge.on("massageEmitter", (num)=>{
+    console.log(`Number is : ${num}`)
+})
+aMassge.newMassge(500)
