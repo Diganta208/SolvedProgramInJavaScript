@@ -1,0 +1,85 @@
+class BST{
+    constructor(num)
+    {
+         this.value= num
+         this.left= null
+         this.right= null
+    }
+}
+
+class ProcessBST
+{
+   
+    addChild(value, head) {
+        let currentNode= head
+        let aNode= new BST(value)
+        if(currentNode== null) return aNode
+        while(currentNode!=null)
+        {
+            if(currentNode.value>value) 
+            {
+                if(currentNode.left==null) 
+                {
+                    currentNode.left= aNode
+                    break 
+                }
+                else currentNode=currentNode.left
+            }
+            else 
+            {
+                if(currentNode.right==null) 
+                {
+                    currentNode.right= aNode
+                    break 
+                }
+                else currentNode=currentNode.right
+            }
+        } 
+    }
+
+    searchChild(value, head){
+        let currentNode= head
+        if(currentNode== null) return -1
+        while(currentNode!=null)
+        {
+            if(currentNode.value== value) return 1
+            else if(currentNode.value>value) currentNode=currentNode.left
+            else currentNode=currentNode.right
+        }
+        return -1
+    }
+
+
+    printInOrder(head)
+    { 
+        if(head== null) return
+        this.printInOrder(head.left)
+        console.log(head.value)
+        this.printInOrder(head.right)
+    }
+
+    printPreOrder(head) {
+        if(head== null) return
+        console.log(head.value)
+        this.printInOrder(head.left)
+        this.printInOrder(head.right)
+    }
+
+    printPostOrder(head)
+    {
+        if(head== null) return
+        
+        this.printInOrder(head.left)
+        this.printInOrder(head.right)
+        console.log(head.value)
+    }
+}
+
+let aTree= new BST(50)
+let treeIMP= new ProcessBST()
+treeIMP.addChild(60,aTree)
+treeIMP.addChild(45,aTree)
+treeIMP.addChild(70,aTree)
+treeIMP.addChild(30,aTree)
+console.log(aTree)
+treeIMP.printInOrder(aTree)
