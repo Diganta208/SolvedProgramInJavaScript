@@ -1,0 +1,21 @@
+function hackerrankInString(s) {
+    // Write your code here
+    
+    let st= 'hackerrank'
+    
+    let j=0
+    let result ='NO'
+    for(let i=0; i<s.length; i++)
+    {
+     if(j==st.length-1 && s[i]==st[j]) 
+       {
+          result ='YES'
+           break;
+       }
+      else if(s[i]==st[j])  j++
+     else continue
+     }
+     
+     return result
+
+}
