@@ -1,0 +1,41 @@
+let st='asfkjkjl432oij23lk91230-9'
+let obj={}
+
+result= "Not Strong"
+
+
+if(st.length>6){
+
+    for(let i=0; i<st.length; i++)
+    {
+        if(st.charCodeAt(i)>=49 && st.charCodeAt(i)<=57 )
+        {
+            if(obj.num) obj.num++
+            else obj.num=1 
+        }
+        else if(st.charCodeAt(i)>=97 && st.charCodeAt(i)<=122)
+        {
+             if(obj.num) obj.small++
+             else obj.small=1 
+        }
+        else if(st.charCodeAt(i)>=65 && st.charCodeAt(i)<=90)
+        {
+             if(obj.num) obj.big++
+             else obj.big=1 
+        }
+        else if(st.charCodeAt(i)==33 || st.charCodeAt(i)==64 ||st.charCodeAt(i)==35 || st.charCodeAt(i)==36 || st.charCodeAt(i)==37 || st.charCodeAt(i)==94 || st.charCodeAt(i)==38 || st.charCodeAt(i)==42|| st.charCodeAt(i)==40 || st.charCodeAt(i)==41 || st.charCodeAt(i)==45 || st.charCodeAt(i)==43)
+        {
+             if(obj.spetial) obj.spetial++
+             else obj.spetial=1 
+        }
+        else  continue;
+    }
+
+    
+        if(obj.big && obj.num && obj.small && obj.spetial)
+         {
+            result= "Strong"
+         }
+}
+
+console.log(result)
