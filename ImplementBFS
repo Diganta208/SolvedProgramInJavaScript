@@ -1,0 +1,23 @@
+
+//implement breath first tree
+
+implementBfs(head)
+  {
+    let node= head
+    let aQueue=[]
+    let visited=[]
+
+    aQueue.push(node)
+
+    while(aQueue.length)
+    {
+        
+        node= aQueue.shift()
+        visited.push(node.value)
+        if(node.left) aQueue.push(node.left)
+        if(node.right) aQueue.push(node.right)
+    }
+
+    return visited
+   }
+}
