@@ -1,0 +1,23 @@
+let arr=[11, 4, 11, 7, 13, 4, 12, 11, 10, 14]
+let brr=[11, 4, 11, 7, 3, 7, 10, 13, 4, 8, 12, 11, 10, 14, 12]
+let result=[]
+let index
+for(let i=0; i<brr.length; i++)
+{
+   //console.log(arr)
+   if(!arr.includes(brr[i])) 
+   {  
+      if(!result.includes(brr[i]))  result.push(brr[i])
+   }
+   else
+   {
+    index= arr.indexOf(brr[i])
+    arr.splice(index,1)
+   }
+   
+}
+
+result.sort((a,b)=>{
+    return a-b
+})
+console.log(result)
