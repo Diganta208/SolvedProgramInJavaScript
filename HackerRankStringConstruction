@@ -1,0 +1,19 @@
+function stringConstruction(s) {
+    // Write your code here
+    
+    let st2=''
+let result=0
+
+for(let i=0; i<s.length; i++)
+{
+    if(!st2.includes(s[i]))
+    {
+       // console.log(st2)
+        st2+=s[i]
+        result++
+    }
+}
+
+return result
+
+}
