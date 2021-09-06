@@ -1,0 +1,25 @@
+function Employee(title) {
+    this.title
+    this.setTitle=function(title){
+        this.title=title
+    }
+    this.getTitle= function()
+    {
+        return this.title
+    }
+}
+
+function Engineer(title, isManager) {
+   
+    Employee.call(this)
+    
+    this.isManager= isManager
+    this.setTitle(title)
+    Engineer.prototype.setIsManager= function(a){
+        console.log(a)
+        this.isManager=a
+    }
+    Engineer.prototype.getIsManager= function(){
+        return isManager
+    }
+}
