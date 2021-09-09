@@ -1,0 +1,36 @@
+let process=['a','b','c','d']
+let at=[0,1,2,3]
+let dt=[10,5,7,9]
+let wt=[]
+let tat=[]
+
+
+function getWailingTime()
+{
+   let i=0
+   let waits=0
+   for(let j=0; j<process.length; j++)
+   {
+       wt.push(i-at[j])
+       console.log(process[j]+' waits '+wt[j]+' second')
+       waits+=wt[j]
+       i+=dt[j]
+   }
+
+   console.log(`Avarage waiting time= ${waits/wt.length}`)
+}
+
+function getTurnAroundTime(){
+    let trunAround=0
+    for(let i=0; i<dt.length; i++)
+    {
+        tat.push(wt[i]+dt[i])
+        trunAround+=tat[i]
+        console.log(`Turn arounds time for ${process[i]} is : ${tat[i]}`)
+    }
+    console.log(`Avarage waiting time= ${trunAround/tat.length}`)
+}
+
+
+getWailingTime()
+getTurnAroundTime()
