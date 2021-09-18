@@ -1,0 +1,30 @@
+const vs = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+
+function superDigitImp(n)
+{
+    if(n.length==1)  vs.write(n + '\n');
+    
+    else{
+        
+        let result=0
+        for(let i=0; i<n.length; i++)
+        {
+            result+=parseInt(n[i])
+        }
+        superDigitImp(result.toString())
+        
+    }
+}
+
+function superDigit(n, k) {
+    // Write your code her
+    let st=n
+    for(let i=0; i<k-1; i++) {  st+=n }
+    
+    superDigitImp(st)
+
+}
+
+
+superDigit('123', 3)
