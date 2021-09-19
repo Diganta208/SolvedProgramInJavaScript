@@ -1,0 +1,25 @@
+let arr= [1,1,4,1,1]
+let rightSum=0
+let leftSum=0
+let result='NO'
+let middle
+
+for(let i=0; i<arr.length; i++)
+{
+    rightSum+= arr[i]
+}
+
+
+for(let i=0; i<arr.length; i++)
+{
+    middle=arr[i]
+    rightSum-=arr[i]
+    if(leftSum==rightSum)
+    {
+        result='YES'
+        break;
+    }
+    leftSum+=arr[i]
+}
+
+console.log(result)
