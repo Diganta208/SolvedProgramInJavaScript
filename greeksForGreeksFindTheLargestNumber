@@ -1,0 +1,21 @@
+ function find(N) {
+
+    
+    if(N<10) return N
+    else{
+        let temp=N
+        let num;
+        while(temp>=10)
+        {
+           num=temp.toString();
+           
+           for(let i=0; i<num.length-1; i++)
+           {
+               if(parseInt(num[i])>parseInt(num[i+1])) break
+               if(parseInt(num[i])<=parseInt(num[i+1]) && i==num.length-2) return temp
+           }
+           temp--
+         
+        }
+    }
+}
