@@ -1,0 +1,7 @@
+ floorSqrt(x)
+    {
+        //your code here
+        let num=Math.sqrt(x)
+        if(num%1===0) return num
+        else return Math.floor(num)
+    }
