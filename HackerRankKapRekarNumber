@@ -1,0 +1,27 @@
+function kaprekarNumbers(p, q) {
+   
+let result=''
+for(let i=p; i<=q; i++)
+{
+    let sq= (i*i).toString();
+    let sum=0
+    if(sq.length>2)
+    {
+      let st1= sq.substring(0,(sq.length/2))
+      let st2= sq.substring((sq.length/2), sq.length)
+      sum= parseInt(st1)+ parseInt(st2)
+    }
+    else
+    {
+       let num= sq[1] ?parseInt(sq[1]) :0
+       sum=parseInt(sq[0])+ num
+    }
+    if(i==sum)
+    {
+        if(result !='') result+=' '+i
+        else result=i
+    }
+}
+ if(result !='') console.log(result)
+ else console.log('INVALID RANGE')
+}
