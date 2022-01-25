@@ -1,0 +1,25 @@
+function superReducedString(st) {
+    // Write your code here
+     let pre;
+     let reduse= false
+     for(let i=0; i<st.length; i++)
+     {
+           if(i==0) pre=st[i]
+           else
+           {
+              if(st[i]==pre)
+              {
+                  let removal= st[i-1]+st[i]
+                  st =st.replace(removal,'')
+                  reduse=true
+                  break;
+                  
+              }
+              else pre=st[i]
+           }
+     }
+     if(reduse== true && st!='') return superReducedString(st)
+     else if(reduse== false && st!='') return st
+     else return 'Empty String'
+
+}
