@@ -1,0 +1,16 @@
+function flatlandSpaceStations(n, c) {
+
+    let distance=[]
+    for(let i=0; i<n; i++)
+    {
+        let minSpace=100000
+        for(let j=0; j<c.length; j++)
+        {
+            if(Math.abs(i-c[j])<minSpace) minSpace=Math.abs(i-c[j])
+            //minSpace.push(Math.abs(i-c[j]))
+        }
+        distance.push(minSpace)
+    }
+
+    return Math.max(...distance)
+}
