@@ -1,0 +1,28 @@
+
+function beautifulTriplets(d, arr) {
+    // Write your code here
+    arr= arr.sort((a,b)=>a-b)
+    let subArr=[]
+    let temp
+    let count=0
+
+   for(let i=0; i<arr.length-1; i++)
+   {
+     subArr.push(arr[i])
+     temp=arr[i]
+     for(let j=0; j<arr.length; j++)
+     {
+         if(arr[j]-temp==d)
+         {
+            subArr.push(arr[j])
+            temp= arr[j]
+         }
+         if(subArr.length==3) break;
+     }
+
+     if(subArr.length==3) count++
+     subArr=[]
+    }
+    
+    return count
+}
