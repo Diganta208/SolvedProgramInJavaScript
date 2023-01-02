@@ -1,0 +1,39 @@
+/**
+ * @param {string} word
+ * @return {boolean}
+ */
+var detectCapitalUse = function(word) {
+    let valid = true
+    let isCaptal = false
+    let isSmall = false
+    for(let i=0; i<word.length; i++){
+        if(i==0){
+            if(containsUppercase(word[i])){
+                isCaptal= true
+            }else isSmall= true
+        }else{
+            if(isSmall==true && containsUppercase(word[i])){
+                valid= false
+                break;
+            }else if(isCaptal== true){
+                if(i!=1 && ((containsUppercase(word[i-1]) && 
+                     !containsUppercase(word[i])) || (containsLower(word[i-1]) && 
+                     !containsLower(word[i])))){
+                    valid= false
+                break;
+                }
+            }
+        }
+    }
+
+   return valid
+    
+};
+
+function containsUppercase(str) {
+  return /^[A-Z]+$/.test(str);
+}
+
+function containsLower(str) {
+  return /^[a-z]+$/.test(str);
+}
