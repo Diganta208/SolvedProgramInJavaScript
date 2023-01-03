@@ -1,0 +1,36 @@
+/**
+ * @param {string[]} strs
+ * @return {number}
+ */
+var minDeletionSize = function(strs) {
+    let result=0
+    for(let j=0; j< strs[0].length; j++){
+       let st=''
+       for(let i=0; i< strs.length; i++){
+          st+=strs[i][j]
+        }
+        if(!checkSortedOrNot(st)){
+           result++
+        }  
+    }
+
+    
+
+    return result
+};
+
+let findDiff=(a, b)=> a.charCodeAt(0) - b.charCodeAt(0)
+
+checkSortedOrNot=(str )=>{
+ 
+if(str.length < 2){
+      return true;
+   };
+   for(let i = 0; i < str.length-1; i++){
+      if(findDiff(str[i+1], str[i]) < 0){
+         return false
+      }
+   };
+   return true;
+ 
+}
