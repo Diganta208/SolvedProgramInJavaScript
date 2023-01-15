@@ -1,0 +1,13 @@
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    let sum=''
+    let arr=[]
+    digits.map((e)=>sum+=e)
+    sum=( BigInt(sum)+BigInt(1)).toString()
+    for(let i=0; i<sum.length; i++){ arr.push(sum[i]) }
+    return arr
+    
+};
