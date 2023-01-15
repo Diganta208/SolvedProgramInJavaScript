@@ -1,0 +1,23 @@
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    let output=''
+    let isNegative= false
+    if(x<0){
+       isNegative=true
+       x=x.toString().slice(1, x.length)
+    }else x= x.toString()
+
+    output =parseInt(x.split("").reverse().join("")) 
+    var reverseN = +String(Math.abs(output))
+    if (reverseN > 0x7FFFFFFF) {
+        return 0;
+    }
+
+    if(isNegative) reverseN= -1* reverseN
+    return reverseN
+
+    
+};
