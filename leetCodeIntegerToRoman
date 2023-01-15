@@ -1,0 +1,32 @@
+/**
+ * @param {number} num
+ * @return {string}
+ */
+var intToRoman = function(num) {
+    let chars=['I',"IV","V","IX", "X", "XL", "L", "XC","C","CD","D","CM","M"]
+    let val=[1,4, 5,9, 10,40 ,50,90, 100,400, 500, 900, 1000]
+    let result=''
+    
+    while(num>0){
+
+        for(let i=0; i<val.length; i++){
+            if(i==val.length-1){
+                 result+=chars[i]
+                 if(num>1999) num=num-val[i]
+                 else num=num%val[i]
+            }else if(num>=val[i] && num<val[i+1]){
+               result+=chars[i]
+               if(val[i]!=1) {
+                   if(val[i]==10 || val[i]==100){
+                      num=num-val[i]
+                   }else num=num%val[i]
+               }
+               else num=num-1
+               break;
+            }
+        }
+         console.log(num)
+    }
+    console.log(result)
+    return result
+};
