@@ -1,0 +1,23 @@
+/**
+ * @param {number} columnNumber
+ * @return {string}
+ */
+let st ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+st= st.split("")
+
+var convertToTitle = function(columnNumber) {
+    columnNumber= columnNumber==0? 26 : columnNumber
+    if(columnNumber<27) return st[columnNumber-1]
+    else{
+       let index= Math.floor(columnNumber/26)
+       index= columnNumber%26==0? index-1 : index
+       if(columnNumber==703) index++
+       if(index-1<=26 ){
+          return st[index-1]+convertToTitle(columnNumber%26)
+       } 
+       else{
+           if(columnNumber==703) index--
+           return convertToTitle(index)+convertToTitle(columnNumber%26)
+       } 
+    }
+};
