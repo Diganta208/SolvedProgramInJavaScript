@@ -1,0 +1,40 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    if(s.length<2)return false
+    s=s.split("")
+    let lastParenthesis=[]
+    let val = true
+    for(let i=0; i<s.length; i++){
+        if(s[i]==')'){
+            if(lastParenthesis[lastParenthesis.length-1]=='(') lastParenthesis.pop()
+            else {
+               val= false
+               break;
+            }
+        }
+        else if(s[i]=='}'){
+            if(lastParenthesis[lastParenthesis.length-1]=='{') lastParenthesis.pop()
+            else {
+               val= false
+               break;
+            }
+        }
+        else if(s[i]==']'){
+            
+            if(lastParenthesis[lastParenthesis.length-1]=='[') lastParenthesis.pop()
+            else {
+               val= false
+               break;
+            }
+            console.log(lastParenthesis)
+        }
+        else lastParenthesis.push(s[i])
+        
+    }
+
+    return lastParenthesis.length==0? val : false
+    
+};
