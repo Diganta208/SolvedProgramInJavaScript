@@ -1,0 +1,40 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var threeSumClosest = function(nums, target) {
+    let result=0
+    let dif=1000000
+    if(nums.length<=3){
+        nums.map((e)=>{
+            result+=e
+        })
+        return result
+    }else{
+        for(let i=0; i<nums.length-2; i++){
+            let sum =nums[i]
+            for(let j=i+1; j<nums.length-1; j++){
+               sum=sum+nums[j]
+               for(let k=j+1; k<nums.length; k++){
+                  sum=sum+nums[k]
+                  if(sum==target){
+                     result=sum
+                     break;
+                  }else if(dif>Math.abs(sum-target)){
+                      result=sum
+                      dif= Math.abs(target-sum)
+                   }
+                 sum=nums[i]+nums[j]  
+               }
+               sum=nums[i]
+               if(result==target) break;
+            }
+            if(result==target) break;
+
+        }
+        return result
+
+    }
+    
+};
