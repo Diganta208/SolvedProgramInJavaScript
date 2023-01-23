@@ -1,0 +1,29 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isUgly = function(n) {
+    if(n<=0) return false
+    let arr=[]
+    let i=2;
+    let value = true
+    while(i<(n/2)){
+        let j= n/i
+        if(Number.isInteger(j)){
+           arr.push(i)
+           arr.push(j)
+           if(i!=2 && i!=3 && i!=5){
+               value= isUgly(i)
+               if(!value) return value
+           }else if(j!=2 && j!=3 && j!=5){
+               value= isUgly(j)
+               if(!value) return value;
+           }
+        }
+        i++
+    }
+
+     if(n>6 && arr.length==0) return false
+     else return value
+    
+};
