@@ -1,0 +1,14 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var countDigitOne = function(n) {
+    let count=0
+    let st=''
+    for(let i=1; i<=n; i++ ){
+       st= i.toString()
+       if(st.includes('1')) count+=(st.match(new RegExp("1", "g")) || []).length
+    }
+
+    return count
+};
