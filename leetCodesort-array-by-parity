@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArrayByParity = function(nums) {
+    let oddArr=[]
+    let evenArr=[]
+    for(let i=0; i<nums.length; i++){
+       if(nums[i]%2==0) evenArr.push(nums[i])
+       else oddArr.push(nums[i])
+    }
+    oddArr.sort((a,b)=>a-b)
+    evenArr.sort((a,b)=>a-b)
+
+    return evenArr.concat(oddArr)
+
+};
