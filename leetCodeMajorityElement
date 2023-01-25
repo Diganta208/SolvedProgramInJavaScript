@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let obj={}
+    for(let i=0; i<nums.length; i++){
+        if(!obj[nums[i]])obj[nums[i]]=1
+        else obj[nums[i]]+=1
+    }
+
+    console.log(obj)
+    let result
+    let count=0
+    for(let aObj in obj){
+        if(obj[aObj]>count){
+           count=obj[aObj]
+           result= aObj
+        }
+    }
+    return result
+};
