@@ -1,0 +1,35 @@
+/**
+ * @param {string} pattern
+ * @param {string} s
+ * @return {boolean}
+ */
+var wordPattern = function(pattern, s) {
+    let result= true
+    s=s.split(' ')
+    if(pattern.length!=s.length) return false
+    let arr=[]
+    let arrString=[]
+    for(let i=0;i<pattern.length;i++){
+        if(arr.includes(pattern[i])){
+            let index= arr.indexOf(pattern[i])
+            if(arrString[index]!=s[i]){
+                result = false
+                break
+            }
+
+        }else{
+            if(arrString.includes(s[i])){
+                    result = false
+                    break
+            }else{
+                arr.push(pattern[i])
+                arrString.push(s[i])
+            }
+           
+        }
+         
+    }
+    return result
+
+    
+};
