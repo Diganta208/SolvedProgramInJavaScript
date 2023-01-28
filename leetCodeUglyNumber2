@@ -1,0 +1,26 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var nthUglyNumber = function(n) {
+   var check=(k)=>{
+        if (k <= 0) return false
+        if (k % 2 === 0) return check(k / 2)
+        if (k % 3 === 0) return check(k / 3)
+        if (k % 5 === 0) return check(k / 5)
+
+        return k=== 1
+   }
+   let index=0
+   let val=1
+   while(index<n){
+     let value= check(val)
+     if(value){
+         index++
+     } 
+     val++
+   }
+   
+   return val-1
+     
+};
