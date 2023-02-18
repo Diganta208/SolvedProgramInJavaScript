@@ -1,0 +1,39 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
+    let node=head
+    let length=0
+    while(node){
+        length++
+        node= node.next
+    }
+
+    if(length<2) {
+      let node= new ListNode(null)
+      return node.next
+   }
+
+    let mid=Math.floor(length/2)
+
+    let current=head
+    let previous
+    let i=0
+    while(i<mid){
+        i++
+        previous= current
+        current= current.next
+    }
+
+    previous.next= current.next
+
+    return head
+};
