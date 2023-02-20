@@ -1,0 +1,34 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {string[]}
+ */
+var binaryTreePaths = function(root) {
+
+    let arr=[]
+    return tree(root, true, '', arr)
+
+    function tree(root, hasChild, line, arr){
+       console.log(hasChild)
+       if(root== null ){
+           if(!hasChild && !arr.includes(line)) arr.push(line)
+           return arr
+       } 
+       if(line=='') line+=root.val
+       else line+= '->'+root.val
+       hasChild= root.right? true: false
+       tree(root.left,hasChild,  line, arr)
+       hasChild= root.left? true: false
+       tree(root.right, hasChild, line, arr)
+       
+       return arr
+    }
+    
+};
