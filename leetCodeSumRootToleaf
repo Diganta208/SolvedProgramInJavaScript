@@ -1,0 +1,38 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var sumNumbers = function(root) {
+     if(!root) return 0
+     let result=[]
+     lavelFn(root, '')
+    let val=0
+    result.map((e)=>{
+       val+=parseInt(e) 
+    })
+
+    return val
+
+    function lavelFn(root, sum){
+        if(!root) return
+        sum+=root.val
+        if(!root.left && !root.right){
+            result.push(sum)
+            return
+        } 
+        
+        lavelFn(root.left, sum)
+        lavelFn(root.right, sum)
+        return
+        
+    }
+      
+};
