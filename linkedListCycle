@@ -1,0 +1,28 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    let adresses=[]
+    let result= false
+
+    while(head){
+        if(adresses.includes(head)){
+              result= true
+              break
+        } 
+        adresses.push(head)
+        head= head.next
+    }
+
+
+    return result
+};
