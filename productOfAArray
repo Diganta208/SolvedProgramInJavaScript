@@ -1,0 +1,13 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+
+    return nums.map((k,i)=>{
+       return nums.reduce((mul, e, j)=>{
+           return mul * (i === j ? 1 : e);
+       },1)
+    })
+    
+};
