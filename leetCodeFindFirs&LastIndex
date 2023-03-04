@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(nums, target) {
+    let arr=[]
+    let index= nums.indexOf(target)??-1
+    arr.push(index)
+
+    if(index==-1) arr.push(-1)
+    else{
+        let secondIndex=index
+        for(let i=index+1; i<nums.length; i++){
+           if(nums[i]!=target) break
+           secondIndex= i
+        }
+        arr.push(secondIndex)
+    }
+    return arr 
+    
+};
